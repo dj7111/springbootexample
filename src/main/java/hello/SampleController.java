@@ -12,6 +12,7 @@ public class SampleController {
     @RequestMapping("/")
     @ResponseBody
     String home() {
+        //'this is a new comment.
         return "Hello World!";
     }
     @RequestMapping(value = "/blah/{name}", method = RequestMethod.GET)
