@@ -19,6 +19,6 @@ public class SampleController {
             consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE,
             produces = {MediaType.APPLICATION_ATOM_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
     public @ResponseBody String postTest(PostTestData postTestData) {
-        return "post test:" + postTestData.getData();
+        return  "{\"post_test\": \"" + postTestData.getStr() + "\"}";
     }
 }
