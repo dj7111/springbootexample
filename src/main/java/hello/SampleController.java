@@ -9,18 +9,10 @@ import org.springframework.web.bind.annotation.*;
 @EnableAutoConfiguration
 public class SampleController {
 
-    @RequestMapping("/")
-    @ResponseBody
-    String home() {
-        //'this is a new comment.
-        return "Hello World!";
-    }
     @RequestMapping(value = "/blah/{name}", method = RequestMethod.GET)
     @ResponseBody
     String blah(  @PathVariable("name") String name) {
         return "Blah " + name;
     }
-    public static void main(String[] args) throws Exception {
-        SpringApplication.run(SampleController.class, args);
-    }
+
 }
