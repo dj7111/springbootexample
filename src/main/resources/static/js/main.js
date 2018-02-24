@@ -11,6 +11,18 @@ function togglePin(pinNumber) {
             }
         );
 }
+
+function allPinsStatus(status) {
+    var allStatus = status ? "on": "off";
+    $.ajax(
+        {
+        type: "GET",
+        url: "/all/" + allStatus + "/",
+        success: function(){}
+        }
+    )
+}
+
 $(document).on('keypress', function(e) {
     if(e.which == 49) {
         togglePin(0);
@@ -37,4 +49,12 @@ $("#toggle_pin_2").click(function(){
 
 $("#toggle_pin_3").click(function(){
     togglePin(3);
+});
+
+$("#all_on").click(function(){
+    allPinsStatus(true);
+});
+
+$("#all_off").click(function(){
+    allPinsStatus(false);
 });

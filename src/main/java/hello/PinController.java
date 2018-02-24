@@ -24,5 +24,13 @@ public class PinController {
     public void toggle(){
         gpioPinDigitalOutput.toggle();
     }
-    
+
+    public void setStatus(String status) {
+        if(status.equals("on")){
+            gpioPinDigitalOutput.high();
+        }
+        else{
+            gpioPinDigitalOutput.low();
+        }
+    }
 }
